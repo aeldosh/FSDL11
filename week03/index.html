@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>Welcome Best</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>🎉 Happy Birthday,bestie! 🎂</h1>
-        <p class="message">Wishing you all the happiness and joy in the world! 💖</p>
-        <button onclick="showSurprise()">Click for a Surprise!</button>
-        <p id="surpriseText" class="surprise hidden">You are the most amazing friend! 🌸💖🎈 Keep shining!</p>
-        <div id="balloons" class="hidden">🎈🎈🎈🎈🎈🎈🎈🎈</div>
-        <canvas id="confettiCanvas"></canvas>
+        <h1>Welcome Best</h1>
+        <img src="your-image.jpg" alt="Welcome Image" class="welcome-image">
+        <div class="dashboard">
+            <button onclick="location.href='candles.html'">Birthday Candles</button>
+            <button onclick="location.href='wish.html'">Birthday Wish</button>
+            <button onclick="showParty()">Party</button>
+        </div>
+        <div id="output" class="output"></div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function showParty() {
+            document.getElementById("output").innerHTML = "<span style='font-size:24px;'>Party kab milega? 🎉</span>";
+        }
+    </script>
 </body>
 </html>
