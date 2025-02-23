@@ -7,19 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome Best</h1>
-        <img src="your-image.jpg" alt="Welcome Image" class="welcome-image">
-        <div class="dashboard">
-            <button onclick="location.href='candles.html'">Birthday Candles</button>
-            <button onclick="location.href='wish.html'">Birthday Wish</button>
-            <button onclick="showParty()">Party</button>
-        </div>
-        <div id="output" class="output"></div>
+    <h1>Welcome Best</h1>
+    <img src="your-image.jpg" alt="Welcome Image">
+    <div class="dashboard">
+        <button onclick="window.location.href='candle.html'">Birthday Candles</button>
+        <button onclick="window.location.href='wish.html'">Birthday Wish</button>
+        <button onclick="partyMessage()">Party</button>
     </div>
+
     <script>
-        function showParty() {
-            document.getElementById("output").innerHTML = "<span style='font-size:24px;'>Party kab milega? 🎉</span>";
+        function partyMessage() {
+            alert("Party kab milega?");
         }
     </script>
 </body>
