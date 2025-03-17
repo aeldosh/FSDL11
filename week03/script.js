@@ -1,32 +1,44 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const cakeSection = document.getElementById('cakeSection');
-    const specialCakeButton = document.getElementById('specialCakeButton');
-    const goBackButton = document.getElementById('goBack');
+// Patient Registration
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("registrationForm");
 
-    if (specialCakeButton) {
-        specialCakeButton.addEventListener('click', function () {
-            let name = document.getElementById('userName').value.trim();
-            let age = parseInt(document.getElementById('userAge').value.trim());
-            let candle = document.getElementById('candle');
+    if (form) {
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const village = document.getElementById("village").value;
+            const phone = document.getElementById("phone").value;
 
-            if (name && age > 0) {
-                cakeSection.style.display = 'block';
-
-                candle.onclick = function () {
-                    candle.classList.add('lit');
-                    document.getElementById('birthdayMessage').innerText = `Happie ${age} Birthday ${name}!`;
-                    document.getElementById('birthdayMessage').style.display = 'block';
-                    goBackButton.style.display = 'block';
-                };
+            if (name && age && village && phone) {
+                alert(`Welcome, ${name}! Redirecting to video consultation...`);
+                window.location.href = "consultation.html"; // Redirect
             } else {
-                alert('Please enter a valid name and age.');
+                alert("Please fill in all fields.");
             }
         });
     }
-
-    if (goBackButton) {
-        goBackButton.addEventListener('click', function () {
-            window.location.href = 'index.html';
-        });
-    }
 });
+
+// WebRTC Video Call
+let localStream;
+let remoteStream;
+
+async function getUserMedia() {
+    localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+    document.getElementById('localVideo').srcObject = localStream;
+}
+
+async function startCall() {
+    getUserMedia();
+    remoteStream = new MediaStream();
+    document.getElementById('remoteVideo').srcObject = remoteStream;
+
+    localStream.getTracks().forEach(track => remoteStream.addTrack(track));
+}
+
+function endCall() {
+    document.getElementById('localVideo').srcObject = null;
+    document.getElementById('remoteVideo').srcObject = null;
+}

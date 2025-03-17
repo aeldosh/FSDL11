@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Best</title>
+    <title>Telemedicine | Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome Best</h1>
-    <img src="your-image.jpg" alt="Welcome Image">
-    <div class="dashboard">
-        <button onclick="window.location.href='candle.html'">Birthday Candles</button>
-        <button onclick="window.location.href='wish.html'">Birthday Wish</button>
-        <button onclick="partyMessage()">Party</button>
-    </div>
 
-    <script>
-        function partyMessage() {
-            alert("Party kab milega?");
-        }
-    </script>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Telemedicine</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="registration.html" target="_blank" class="btn animate-btn">Register</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Virtual Healthcare for Rural Patients</h1>
+        <p>Connect with doctors instantly from your village.</p>
+        <a href="registration.html" target="_blank" class="btn animate-btn">Register Now</a>
+    </section>
+
 </body>
 </html>
